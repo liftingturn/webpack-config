@@ -1,0 +1,6 @@
+//바벨은 es6에서 es5로 자바스크립트 변환
+//아래 내용이 그 역할을 함
+
+{
+    "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
