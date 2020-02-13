@@ -1,10 +1,22 @@
 import React from 'react'
-import './style.scss'
+import {BrowserRouter} from 'react-router-dom'
+import Rotuer from './Router'
+import {createStore, combineReducers} from 'redux'
+import {Provider}from 'react-redux'
+import {reducer as formReducer} from 'redux-form'
+
+const rootReducer = combineReducers({
+    form : formReducer
+})
+const store = createStore(rootReducer)
+
 
 export default function Root() {
     return (
-        <div>
-            <h3 className='title'>root component!</h3>
-        </div>
+        <Provider store = {store}>
+        <BrowserRouter basename='/'>
+          <Rotuer/>
+        </BrowserRouter>
+        </Provider>
     )
 }

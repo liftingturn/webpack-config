@@ -2,8 +2,6 @@ const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // css를 추출해서 파일로 저장하는 플러그인
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
-// import path from 'path'
-// import {CleanWebpackPlugin} from 'clean-webpack-plugin'
 
 module.exports = {
     entry : './src/index.js', //웹팩 빌드 대상 파일 위치. 해당 파일 기준으로 import된 모듈들을 찾아 하나의 파일로 번들링.
@@ -59,7 +57,7 @@ module.exports = {
     plugins: [  //플러그인 등록
         new HtmlWebPackPlugin({ //html을 읽어서 빌드할 수 있게 해줌.
             template : './public/index.html',// 해당 파일을 읽는다
-            filename : 'index.html' //output 파일 명
+            filename : './index.html' //output 파일 명
         }),
         new MiniCssExtractPlugin({
             filename:'style-test.css' //빌드 후 분리한 css파일
