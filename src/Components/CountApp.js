@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { totalCountActionCreate, reset} from '../Redux/Actions/CounterActions'
-import {INCREMENT,RESET} from '../Redux/Actions/CounterActions'
+import {totalCountActionCreate,INCREMENT,RESET,INCREMENT_ASYNC} from '../Redux/Actions/CounterActions'
 import '../style.scss'
 
 function CountApp(props) {
@@ -12,7 +11,7 @@ function CountApp(props) {
         <div className = 'countApp'>
         <h3> count num : {JSON.stringify(props.state.number.num)}</h3> 
             <button onClick={clickHandler} >{INCREMENT}</button>
-            <button>+1 after 1sec</button>
+            <button onClick={clickHandler} >{INCREMENT_ASYNC}</button>
             <button onClick={clickHandler}>{RESET}</button>
         </div>
     )

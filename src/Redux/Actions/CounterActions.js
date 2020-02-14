@@ -2,6 +2,7 @@
 export const INCREMENT = "INCREMENT"
 export const DECREMENT = "DECREMENT"
 export const RESET = "RESET"
+export const INCREMENT_ASYNC = 'INCREMENT_ASYNC'
 
 export const totalCountActionCreate = (type) =>{
     switch(type){
@@ -9,6 +10,8 @@ export const totalCountActionCreate = (type) =>{
             return increment()
         case RESET:
             return reset()
+        case INCREMENT_ASYNC:
+            return arithAsync()
     }
 }
 
