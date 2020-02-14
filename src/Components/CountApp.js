@@ -22,8 +22,8 @@ const mapStateToProps = stateFromStore =>{  //이 함수가 store의 state를 pr
     return {state:stateFromStore} 
 }
 //mapDispatchToProps : Reducer에 dispatch(action을 알리는 함수)를 props에 어떻게 엮을지
-const mapDispatchToProps = (dispatch) => {
-    return ({onclickDispatch:(type)=>dispatch(totalCountActionCreate(type))})
+const mapDispatchToProps = (dispatch) => {  // dispatch 는 reducer를 동작하게 맹글어줌. state변화는 reducer가 진행한다. 단지 전달자.
+    return ({onclickDispatch:(type)=>dispatch(totalCountActionCreate(type))}) //디스패치 파라미터는 액션 or (액션생성자 return)
 }
 
 export default connect(
