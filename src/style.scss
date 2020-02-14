@@ -8,6 +8,22 @@ $fontSize : 52px;
 }
 
 form{
+    margin-left: 35%;
+    width:30%;
+    text-align: center;
     align-items: center;
     align-content: center;
+    background-color: grey;
+    padding: 20px 0px 10px;
+}
+
+.fieldRow{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.countApp{
+    text-align: center;
+    color: red;
+    margin-bottom: 100px;
 }

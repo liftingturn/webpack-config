@@ -1,5 +1,5 @@
 import update from "react-addons-update"
-import {INCREMENT} from '../Actions/CounterActions'
+import {INCREMENT,RESET} from '../Actions/CounterActions'
 
 const initState = {
     num : 0
@@ -7,13 +7,15 @@ const initState = {
 
 export const clickNumber = (state=initState,action) =>{
     switch(action.type){
+
         case INCREMENT :
-        console.log('clickNumber in reducer run')
         return update(state,{
             num : {$set :state.num+1}
-        }
-        
-        )
+        })
+        case RESET :
+            return update(state,{
+                num : {$set : 0}
+            })
         default:return state
     }
 }

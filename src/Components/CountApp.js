@@ -1,17 +1,19 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { arithAsync, increment } from '../Redux/Actions/CounterActions'
+import { totalCountActionCreate, reset} from '../Redux/Actions/CounterActions'
+import {INCREMENT,RESET} from '../Redux/Actions/CounterActions'
+import '../style.scss'
 
 function CountApp(props) {
-    const plusNumber = () =>{
-        console.log('plus1')
-        props.onclickDispatch()
+    const clickHandler = (e) =>{
+        props.onclickDispatch(e.target.innerHTML)
     }
     return (
-        <div>
-            {/* store.getState().num들어갈것임*/}
+        <div className = 'countApp'>
         <h3> count num : {JSON.stringify(props.state.number.num)}</h3> 
-            <button onClick={plusNumber}>+1</button>
+            <button onClick={clickHandler} >{INCREMENT}</button>
+            <button>+1 after 1sec</button>
+            <button onClick={clickHandler}>{RESET}</button>
         </div>
     )
 }
@@ -26,5 +28,5 @@ function CountApp(props) {
 
 export default connect(
     state => ({state:state}),
-    dispatch => ({onclickDispatch:()=>dispatch(increment())}) //인수로 전달된 state = redux store의 state
+    dispatch => ({onclickDispatch:(type)=>dispatch(totalCountActionCreate(type))}) //인수로 전달된 state = redux store의 state
 )(CountApp)

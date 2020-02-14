@@ -13,7 +13,7 @@ import CountApp from './Components/CountApp'
     //  checkValue(values){ 
     //     console.log(values)}
      checkValue = (val) =>{
-         console.log(val)
+         alert(val)
      }   
 
 
