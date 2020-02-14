@@ -1,19 +1,33 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './style.scss'
 import LoginForm from './LoginForm'
+import CountApp from './Components/CountApp'
 
-export default function MainPage() {
 
-    const checkValue = values => { 
-        console.log(values)
+ class MainPage extends Component {
+
+    // constructor(props){
+    //     super(props)
+    //     this.checkValue = this.checkValue.bind(this)
+    // }
+    //  checkValue(values){ 
+    //     console.log(values)}
+     checkValue = (val) =>{
+         console.log(val)
+     }   
+
+
+    render() {
+        
+        return (
+            <>
+            <h3 className='title'>MainPage</h3>
+            <CountApp></CountApp>
+            <div className = 'container'>
+                <LoginForm onSubmit = {this.checkValue}/>
+            </div>
+            </>
+        )
     }
-
-    return (
-        <>
-        <h3 className='title'>root component!</h3>
-        <div className = 'container'>
-            <LoginForm onSubmit = {checkValue}/>
-        </div>
-        </>
-    )
 }
+export default MainPage

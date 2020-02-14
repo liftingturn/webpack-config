@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import {Field, reduxForm} from 'redux-form'
 
 class LoginForm extends Component {
-    
+    // constructor(props){
+    //   super(props)
+    // }
     render() {
         return (
-           
-              <form onSubmit={this.props.onSubmit}>
+          // redux form은 무조건 onsubmit eventhandler를 해당 이름으로 받음.
+              <form onSubmit={this.props.handleSubmit}> 
               <div>
         <label htmlFor="firstName">First Name</label>
         <Field name="firstName" component="input" type="text" />
@@ -26,8 +28,6 @@ class LoginForm extends Component {
     }
 }
 
-LoginForm = reduxForm({
+export default reduxForm({
     form : 'contact'
 })(LoginForm)
-
-export default LoginForm
