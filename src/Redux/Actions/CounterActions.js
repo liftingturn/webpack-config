@@ -3,13 +3,6 @@ export const INCREMENT = "INCREMENT"
 export const DECREMENT = "DECREMENT"
 export const RESET = "RESET"
 
-export const arithAsync = () =>{
-    return dispatch => {
-        setTimeout(() => {
-           dispatch(increment())
-        }, 1000);
-    }
-}
 export const totalCountActionCreate = (type) =>{
     switch(type){
         case INCREMENT :
@@ -19,12 +12,19 @@ export const totalCountActionCreate = (type) =>{
     }
 }
 
+export const arithAsync = () =>{
+    return dispatch => {
+        setTimeout(() => {
+           dispatch(increment())
+        }, 1000);
+    }
+}
 
-export const increment = (data) => { 
+export const increment = () => { 
    return {type : INCREMENT}
 }
 
-export const decrement = (data) => { 
+export const decrement = () => { 
     return {type : DECREMENT}
 }
 

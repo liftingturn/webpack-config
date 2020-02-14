@@ -18,15 +18,16 @@ function CountApp(props) {
     )
 }
 
-// const mapStateToProps = state =>{  //이 함수가 store의 state를 props와 매핑
-//     return{
 
-//     }
-// }
-
+const mapStateToProps = stateFromStore =>{  //이 함수가 store의 state를 props와 매핑
+    return {state:stateFromStore} 
+}
 //mapDispatchToProps : Reducer에 dispatch(action을 알리는 함수)를 props에 어떻게 엮을지
+const mapDispatchToProps = (dispatch) => {
+    return ({onclickDispatch:(type)=>dispatch(totalCountActionCreate(type))})
+}
 
 export default connect(
-    state => ({state:state}),
-    dispatch => ({onclickDispatch:(type)=>dispatch(totalCountActionCreate(type))}) //인수로 전달된 state = redux store의 state
+    mapStateToProps,
+   mapDispatchToProps //인수로 전달된 state = redux store의 state
 )(CountApp)

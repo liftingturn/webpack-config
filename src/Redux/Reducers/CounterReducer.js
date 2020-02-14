@@ -7,7 +7,6 @@ const initState = {
 
 export const clickNumber = (state=initState,action) =>{
     switch(action.type){
-
         case INCREMENT :
         return update(state,{
             num : {$set :state.num+1}

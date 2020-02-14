@@ -5,7 +5,6 @@ import CountApp from './Components/CountApp'
 
 
  class MainPage extends Component {
-
     // constructor(props){
     //     super(props)
     //     this.checkValue = this.checkValue.bind(this)
@@ -13,10 +12,8 @@ import CountApp from './Components/CountApp'
     //  checkValue(values){ 
     //     console.log(values)}
      checkValue = (val) =>{
-         alert(val)
+         alert(JSON.stringify(val))
      }   
-
-
     render() {
         
         return (
